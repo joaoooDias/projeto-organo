@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import { useState } from 'react';
 
-const Formulario = () =>{
+const Formulario = (props) =>{
 
     const estados = [
         'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'
@@ -17,7 +17,12 @@ const Formulario = () =>{
 
     const aoSalvar = (evento)  =>{
         evento.preventDefault()
-        console.log('Form foi submetido', nome, apelido, idade, estado)
+        props.aoColaboradorCadastrado({
+            nome,
+            apelido,
+            idade,
+            estado
+        })
     }
     return (
         <section className="formulario">

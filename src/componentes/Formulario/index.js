@@ -6,9 +6,7 @@ import { useState } from 'react';
 
 const Formulario = (props) =>{
 
-    const estados = [
-        'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'
-    ]
+    
 
     const [nome, setNome] = useState('')
     const [apelido, setApelido] = useState('')
@@ -52,7 +50,7 @@ const Formulario = (props) =>{
                 <ListaSuspensa
                 obrigatorio={true}
                 label="Estado"
-                itens={estados}
+                itens={props.estado}
                 valor={estado}
                 aoAlterado={valor => setEstado(valor)}/>
                 <Botao>

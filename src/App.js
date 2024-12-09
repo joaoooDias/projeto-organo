@@ -155,8 +155,15 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
-      {estado.map(estado => <Estado key={estado.nome} nome={estado.nome} corPrimaria={estado.corPrimaria} corSecundaria={estado.corSecundaria}/>)}
+      <Formulario estado={estado.map(estado => estado.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+      {estado.map(estado => <Estado 
+      key={estado.nome} 
+      nome={estado.nome} 
+      corPrimaria={estado.corPrimaria} 
+      corSecundaria={estado.corSecundaria}
+      colaboradores={colaboradores}
+      />
+      )}
     </div>
   );
 }
